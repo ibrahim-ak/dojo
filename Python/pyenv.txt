@@ -1,0 +1,4 @@
+python -m venv FileName
+
+source "file name"/Scripts/activate  
+
