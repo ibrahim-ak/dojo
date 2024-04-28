@@ -1,0 +1,73 @@
+$ pip list
+Package  Version
+-------- -------
+asgiref  3.8.1
+pip      24.0
+sqlparse 0.5.0
+tzdata   2024.1
+
+$ source django/Scripts/activate
+
+
+
+$ pip install Django==2.2.4
+Collecting Django==2.2.4
+  Using cached Django-2.2.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pytz (from Django==2.2.4)
+  Using cached pytz-2024.1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting sqlparse (from Django==2.2.4)
+  Using cached sqlparse-0.5.0-py3-none-any.whl.metadata (3.9 kB)
+Using cached Django-2.2.4-py3-none-any.whl (7.5 MB)
+Using cached pytz-2024.1-py2.py3-none-any.whl (505 kB)
+Using cached sqlparse-0.5.0-py3-none-any.whl (43 kB)
+Installing collected packages: pytz, sqlparse, Django
+Successfully installed Django-2.2.4 pytz-2024.1 sqlparse-0.5.0
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip freeze
+Django==2.2.4
+pytz==2024.1
+sqlparse==0.5.0
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip list
+Package  Version
+-------- -------
+Django   2.2.4
+pip      24.0
+pytz     2024.1
+sqlparse 0.5.0
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip freeze > requirments.txt
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip list
+Package  Version
+-------- -------
+Django   2.2.4
+pip      24.0
+pytz     2024.1
+sqlparse 0.5.0
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip uninstall django
+Found existing installation: Django 2.2.4
+Uninstalling Django-2.2.4:
+  Would remove:
+    c:\users\ibrah\onedrive\desktop\dojo\python\my_envi\django\lib\site-packages\django-2.2.4.dist-info\*
+    c:\users\ibrah\onedrive\desktop\dojo\python\my_envi\django\lib\site-packages\django\*
+    c:\users\ibrah\onedrive\desktop\dojo\python\my_envi\django\scripts\django-admin.exe
+    c:\users\ibrah\onedrive\desktop\dojo\python\my_envi\django\scripts\django-admin.py
+Proceed (Y/n)? y
+  Successfully uninstalled Django-2.2.4
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip show django
+WARNING: Package(s) not found: django
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$ pip show django^C
+(django)
+ibrah@pengiun MINGW64 ~/OneDrive/desktop/dojo/Python/my_envi (master)
+$
