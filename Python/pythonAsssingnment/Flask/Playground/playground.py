@@ -4,7 +4,7 @@ app=Flask(__name__)
 arry = ["/",'/name/times','/name/times/backgroundcolor' ]
 @app.route('/')
 def level1():
-     return render_template('playground.html', numOfTimes = 3), 
+     return render_template('playground.html', numOfTimes = 3)
 
 @app.route('/<name>/<times>/')
 def level2(name,times):
