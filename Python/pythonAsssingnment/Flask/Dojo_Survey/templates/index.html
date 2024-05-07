@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dojo Survey</title>
+</head>
+<style>
+
+     div{
+          margin: auto;
+          width: 300px;
+          border: 2px solid black;
+          padding: 100px;
+     }
+     
+
+</style>
+
+
+<body>
+     <h1>welcome </h1>
+     <h3>Regestrion From </h3>
+     <div>
+
+          <form action="/result" method="post">
+               <p>your name : <input type="text" name="name"></p>
+               <br>
+               <label for="location">location</label>
+               <select name="location">
+                    <option value="ramallah">ramallah</option>
+                    <option value="bethlahem">bethlahem</option>
+                    <option value="nablus">nablus</option>
+               </select>
+               <br>
+               <label for="language">language</label>
+               <select name="language">
+               <option value="java">java</option>
+               <option value="c#">c#</option>
+               <option value="flask">flask</option>
+               <option value="python">python</option>
+          </select>
+          <br>
+          <label for="comment">comment</label>
+          <br>
+          <textarea name="comment"></textarea>
+          <br>
+          <button>sign up</button>
+     </form>
+</div>
+     
+</body>
+
+</html>
