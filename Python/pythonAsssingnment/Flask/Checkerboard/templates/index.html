@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Checkerboard</title>
+</head>
+
+<style>
+     .count {
+          display: grid;
+          grid-template-columns:repeat({{numOfTimes1}}, 1fr) ;
+          margin: auto;
+
+     }
+
+     .count div {
+          padding: 47px;
+          border: 1px solid black;
+          
+     }
+</style>
+
+<body>
+
+     <div class="count">
+          {%for i in range (numOfTimes1 ) %}
+          {%for j in range (numOfTimes2) %}
+          {%if ((i+j)+1)%2 ==1%}
+          <div style="background-color: {{fcolor}};">{{fcolor}}</div>
+          
+          {%else%}
+          <div style="background-color: {{scolor}};">{{scolor}}</div>
+          {%endif%}
+          {%endfor%}
+          {%endfor%}
+
+     </div>
+</body>
+
+</html>
