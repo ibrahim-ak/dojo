@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CounterappConfig(AppConfig):
+class CounterAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'counterApp'
+    name = 'counter_app'
