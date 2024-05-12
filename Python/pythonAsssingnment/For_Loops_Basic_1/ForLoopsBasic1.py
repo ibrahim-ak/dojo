@@ -22,7 +22,7 @@ for w in range (1,101,1):
 
 #Whoa. That Sucker's Huge
 sum =0
-for a in range(0,500000,1):
+for a in range(500000):
      if a%2==1:
           sum=sum+a
 print(sum)

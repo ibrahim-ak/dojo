@@ -4,7 +4,7 @@ app.secret_key = 'ibrahim'
 @app.route('/')
 def showingTheForm():
      if 'counter' and 'counter2' in session:
-          print('key exists!')
+          # print('key exists!')
           session['counter2']+=1
           session['counter']+=1
      else:

@@ -61,7 +61,8 @@ def average(list):
 
 
 #Ultimate Analysis
-Ultimate_Analysis= {'sumTotal': Sum_total( [37,2,1,-9]), 'average': average([37,2,1,-9]), 'minimum':Minimum([37,2,1,-9]), 'maximum': Maximum([37,2,1,-9]) , 'length':len([37,2,1,-9])}
+Ultimatelist = [37,2,1,-9]
+Ultimate_Analysis= {'sumTotal': Sum_total(Ultimatelist), 'average': average(Ultimatelist), 'minimum':Minimum(Ultimatelist), 'maximum': Maximum(Ultimatelist) , 'length':len(Ultimatelist)}
 print(Ultimate_Analysis)
 
 
@@ -71,3 +72,5 @@ def Reverse_List(list):
           print(list[x])
 
 Reverse_List([37,2,1,-9])
+
+
