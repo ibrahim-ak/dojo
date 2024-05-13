@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     {%load static%}
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+     <div class="gold">
+          <p>your gold</p>
+          <span> {{request.session.gold}} </span>
+     </div>
+     <div class="cards">
+          
+               <div>
+                    <h1>farm</h1>
+                    <p>( earns 10-20 gold )</p>
+                    <button><a href="/farming">find gold</a></button>
+               </div>
+               <div>
+                    <h1>cave</h1>
+                    <p>( earns 10-20 gold )</p>
+                    <button><a href="/cave">find gold</a></button>
+               </div>
+               <div>
+                    <h1>house</h1>
+                    <p>( earns 10-20 gold )</p>
+                    <button><a href="/home">find gold</a></button>
+               </div>
+          
+               <div>
+                    <h1>Quest</h1>
+                    <p>( earns/takes 0-50 gold )</p>
+                    <button><a href="/quest">find gold</a></button>
+               </div>
+          </form>
+     </div>
+     <div>
+          <h2>activities: </h2>
+          <div>
+               <p class="break">{{request.session.activities }} </p>
+          </div>
+     </div>
+</body>
+
+</html>

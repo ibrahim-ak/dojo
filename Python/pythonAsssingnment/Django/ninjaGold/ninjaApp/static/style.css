@@ -1,0 +1,37 @@
+.gold{
+     display: flex;
+     margin-left: 5.6em;
+     align-items: center;
+}
+.gold p{
+     font-size: 1.4em;
+}
+.gold span{
+     margin-left:10px;
+     font-size: 1.4em;
+}
+.cards{
+     display: flex;
+     justify-content: space-around;
+}
+.cards div{
+     border : 2px solid gray;
+     margin-left: 20px;
+     padding: 10px;
+     background-color: whitesmoke;
+     text-align: center;
+     width: 200px;
+     height: 200px;
+}
+.cards div button {
+box-shadow: 3px 3px 3px gray;
+}
+
+.cards div a {
+     text-decoration: none;
+     font-weight: 600;
+     color:  black;
+}
+.break{
+     word-break: break-all;
+}
