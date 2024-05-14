@@ -1,0 +1,38 @@
+after creating users model  ..
+
+1-python mange.py makemigrations
+2-python mange.py migrate
+3-python mange.py shell
+4- from users_app.models import Users
+5-Users.objects.create(firstname ='layth' , lastname='amer', email_address = 'lyath
+   ...: @gmail.com' , age=22 )
+6-Users.objects.create(firstname ='ibrahim' , lastname='kahlil', email_address = 'i
+   ...: brahimm@gmail.com' , age=30 )
+7-Users.objects.create(firstname ='mohammad' , lastname='essa', email_address = 'mo
+   ...: hammad.essa@gmail.com' , age=26 )
+8-alluser= Users.objects.all()
+
+9-alluser.get(id=1).__dict__
+10-alluser.get(id=2).__dict__
+11-alluser.get(id=).__dict__
+
+12- alluser.last().__dict__
+13- alluser.first().__dict__
+14- user3=Users.objects.get(id=3)
+15-  user3.lastname = "Pancakes"
+16- user3.__dict_
+17- user3.save()
+18- user2=Users.objects.get(id=2)
+ user2.delete()
+19-print(alluser.values())
+20 - 
+(alluser.order_by('firstname'))
+<QuerySet [<Users: Users object (1)>, <Users: Users object (3)>]>
+
+In [31]: print (alluser.values())
+<QuerySet [{'id': 1, 'firstname': 'layth', 'lastname': 'amer', 'email_address': 'lyath@gmail.com', 'age': 22, 'created_at': datetime.datetime(2024, 5, 14, 10, 5, 27, 680741, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 5, 14, 10, 5, 27, 680741, tzinfo=datetime.timezone.utc)}, {'id': 3, 'firstname': 'mohammad', 'lastname': 'Pancakes', 'email_address': 'mohammad.essa@gmail.com', 'age': 26, 'created_at': datetime.datetime(2024, 5, 14, 10, 6, 43, 563297, tzinfo=datetime.timezone.utc), 'updated_at': datetime.datetime(2024, 5, 14, 10, 18, 38, 596779, tzinfo=datetime.timezone.utc)}]>
+
+21 -alluser.order_by('-firstname')
+
+22- print (alluser.values())
+
