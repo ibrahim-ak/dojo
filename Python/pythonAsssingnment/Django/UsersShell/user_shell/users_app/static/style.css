@@ -1,0 +1,24 @@
+h1{
+     
+     text-align: center;
+}
+.table{
+     border: 2px solid gray;
+     margin: 0 auto;
+}
+th {
+     padding: 20px;
+}
+td{
+     border: 1px solid gray;
+     padding: 20px;
+}
+.cards{
+     text-align: center;
+     padding: 10px;
+
+}
+.cards div {
+     padding: 20px;
+     
+}

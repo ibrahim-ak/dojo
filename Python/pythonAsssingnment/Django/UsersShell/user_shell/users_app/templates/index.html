@@ -4,11 +4,57 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+     <title>C+R Users</title>
+     {% load static %}
+     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 
 <body>
+     <h1>All The Users</h1>
+     <div>
+          <table class="table">
+               <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+               </tr>
+               {%for User in Users%}
+               <tr>
+                    <td>{{User.id}}</td>
+                    <td>{{User.firstname}} {{User.lastname}}</td>
+                    <td>{{User.email_address}}</td>
+                    <td>{{User.age}}</td>
+               </tr>
+               {%endfor%}
+          </table>
+     </div>
+     <hr>
+     <div>
+          <h1>Add a User</h1>
+          <div class="cards">
+               <form action="/DBprocess" method="post">
+                    {% csrf_token %}
+                    <div>
 
+                         <label for="Firstname">Firstname</label>
+                         <input type="text" name="Firstname">
+                         <label for="Email">Email</label>
+                         <input type="Email" name="Email">
+                    </div>
+
+                    <div>
+                         <label for="Lastname">Lastname</label>
+                         <input type="text" name="Lastname">
+                         <label for="Age">Age</label>
+                         <input type="number" name="Age">
+                    </div>
+
+                    <button>Add</button>
+               </form>
+          </div>
+
+     </div>
 </body>
 
 </html>
