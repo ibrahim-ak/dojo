@@ -1,0 +1,28 @@
+.header{
+     display: flex;
+     justify-content: space-around;
+}
+.card{
+     display: flex;
+
+}
+.label{
+display: flex;
+flex-direction: column;
+}
+.label label , select , input ,button{
+     margin:10px;
+     text-align: center;
+}
+.label button{
+     width: 50px;
+     box-shadow: 3px 3px 3px black;
+     border: 2px solid;
+}
+.content{
+     display: flex;
+     justify-content: space-around;
+}
+.preview{
+     text-align: center;
+}
