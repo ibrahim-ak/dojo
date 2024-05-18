@@ -1,0 +1,32 @@
+.container{
+     display: flex;
+     justify-content: space-around;
+     align-items: top;
+}
+table{
+     margin-top: 20px;
+     text-align: center;
+     width: 150px;
+     border: 2px solid gray;
+}
+table tr th ,td{
+     border: 1px solid gray;
+}
+
+.card{
+     display: flex;
+}
+
+
+.label{
+display: flex;
+flex-direction: column;
+}
+.label label , input ,.des{
+     margin:10px;
+}
+.label  button{
+     width: 50px;
+     margin:10px;
+
+}
