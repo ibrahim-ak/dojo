@@ -26,7 +26,7 @@ def addUser(request):
         errors = User.objects.basic_validator(request.POST)
         if len(errors) > 0:
             for key, value in errors.items():
-                messages.error(request, value, extra_tags="register")
+                messages.error(request, value, extra_tags="registerFailed")
             return redirect('/')
         else:
             first_name = request.POST['first_name']
@@ -48,7 +48,7 @@ def login(request):
                 request.session['useremail'] = logged_email.id
                 return redirect('/success')
         else: 
-            messages.error(request, 'the password or email you enterd is incorrect',extra_tags="login")
+            messages.error(request, 'the password or email you enterd is incorrect',extra_tags="loginFailed")
             return redirect("/")
     
 def logout(request):

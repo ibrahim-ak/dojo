@@ -37,7 +37,7 @@
                     <input type="submit" value="Register">
                </form>
                {%for message in messages%}
-                    {%if "register" in message.tags%}
+                    {%if "registerFailed" in message.tags%}
                          <p>{{message}}</p>
                     {%endif%}
                {%endfor%}
@@ -59,7 +59,7 @@
                     <input type="submit" value="Login">
                </form>
                {%for message in messages%}
-                    {%if "login" in message.tags%}
+                    {%if "loginFailed" in message.tags%}
                          <p>{{message}}</p>
                     {%endif%}
                {%endfor%}
