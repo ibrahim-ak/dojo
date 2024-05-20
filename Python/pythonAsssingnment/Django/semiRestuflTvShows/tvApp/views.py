@@ -1,6 +1,6 @@
 from django.shortcuts import render , redirect
 from .models import *
-# Create your views here.
+from django.contrib import messages
 def shows(request):
      context={ 
           'TVshow' :TVshow.objects.all() 
@@ -14,6 +14,12 @@ def addshow(request):
      return render( request,'addShow.html')
 
 def procces(request):
+     errors = TVshow.objects.basic_validator(request.POST)
+     if len(errors) > 0:
+          for key, value in errors.items():
+                    messages.error(request, value)
+          return redirect('/shows/new/')
+
      t = request.POST['title']
      net=request.POST['Network']
      release=request.POST['ReleaseDate']
@@ -43,6 +49,12 @@ def showtoedit(request,id):
      return render (request,'edit.html',context)
 
 def edit(request,id):
+
+     errors = TVshow.objects.basic_validator(request.POST)
+     if len(errors) > 0:
+          for key, value in errors.items():
+                    messages.error(request, value)
+          return redirect(f'../shows/showtoedit/{id}')
      title =request.POST['title']
      Network = request.POST['Network']
      ReleaseDate = request.POST['ReleaseDate']
@@ -54,3 +66,5 @@ def edit(request,id):
      show.desc =Description
      show.save()
      return redirect('/shows/')
+
+
