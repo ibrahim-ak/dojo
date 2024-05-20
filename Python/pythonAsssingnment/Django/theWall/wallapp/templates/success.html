@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     {%load static%}
+     <link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+
+<body>
+     <header>
+
+
+          <h1> Welcome {{user.first_name}} </h1>
+          <a href="/logout">logout</a>
+
+
+     </header>
+     <hr>
+     <div class="post">
+          <form action="createpost/{{request.session.username}}" method="post">
+               {% csrf_token %}
+
+               <h1>post a massage</h1>
+               <textarea name="textarea" rows="10"></textarea>
+               <!-- <input type="hidden"> -->
+               <br>
+               <button>post</button>
+          </form>
+     </div>
+     <div class="mas">
+          {%for masg in massages %}
+          <h4>{{masg.users.first_name}}</h4>
+          <p>{{masg.message}}</p>
+          
+
+          {%for comment in masg.comments.all %}
+               <p class="comme"><strong>{{comment.users.first_name}}</strong> {{comment.Comment}}</p>
+               <a href="delete/{{comment.id}}"><button>delete</button></a>
+          
+          {%endfor%}
+          
+          <form action="/addcomment/{{request.session.username}}/{{masg.id}}" method="post">
+               {% csrf_token %}
+               
+               <h1>add a comment</h1>
+               <textarea name="comment" rows="10"></textarea>
+               <!-- <input type="hidden"> -->
+               <br>
+               <button>post</button>
+          
+     </form>
+          {%endfor%}
+     </div>
+     
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+header{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+.post{
+     text-align: center;
+     padding: 100px;
+}
+
+.post button{
+     display: block;
+     margin-left: auto;
+     width: 100px;}
+.post textarea{
+     width: 100%;
+}
+.mas{
+     margin-left: 130px;
+     
+}
+.comment{
+     text-align: center;
+     padding: 100px;
+}
+.comment textarea{
+     width: 100%;
+
+}
+.comment button{
+     display: block;
+     margin-left: auto;
+     width: 100px;}
