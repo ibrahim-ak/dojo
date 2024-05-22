@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     {%load static%}
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+     <header>
+
+          <h1> welcome {{request.session.username}}</h1>
+          <a href="/logout">log out</a>
+     </header>
+     <hr>
+     <div class="show_book">
+
+          <div>
+               <h4>{{books.title}}</h4>
+               <p>added by {{books.uplodaed_book.first_name}}</p>
+               <p>added on {{books.creatd_at}}</p>
+               <p>updated_at {{books.updated_at}}</p>
+               <p>description {{books.description}}</p>
+
+
+          </div>
+          <div>
+               <h1>User who like the book:</h1>
+               {%for user in books.users_like.all%}
+               <p>{{ user.first_name }}</p>
+
+               {% endfor %}
+               {% if logged_user == books.uplodaed_book %}
+               <p><a href="/booktoedit/{{books.id}}"> edit</a></p>
+               {%endif%}
+               <a href="/success">go back</a> 
+               {% if logged_user in books.users_like.all %}
+               <p><a href="/unfavorite/{{books.id}}"> un favorite</a></p>
+               {% else %}
+               <p><a href="/addtofavorite/{{books.id}}">add to favorite</a></p>
+               {%endif%}
+          </div>
+         
+     </div>
+</body>
+
+</html>

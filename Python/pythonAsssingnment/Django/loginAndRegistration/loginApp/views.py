@@ -41,15 +41,15 @@ def addUser(request):
 
 def login(request):
 
-        email = User.objects.filter(Email=request.POST['login_email'])
-        if email: 
-            logged_email = email[0] 
-            if bcrypt.checkpw(request.POST['login_password'].encode(), logged_email.password.encode()):
-                request.session['useremail'] = logged_email.id
-                return redirect('/success')
-        else: 
-            messages.error(request, 'the password or email you enterd is incorrect',extra_tags="loginFailed")
-            return redirect("/")
+    email = User.objects.filter(Email=request.POST['login_email'])
+    if email: 
+        logged_email = email[0] 
+        if bcrypt.checkpw(request.POST['login_password'].encode(), logged_email.password.encode()):
+            request.session['useremail'] = logged_email.id
+            return redirect('/success')
+        
+    messages.error(request, 'the password or email you enterd is incorrect',extra_tags="loginFailed")
+    return redirect("/")
     
 def logout(request):
     request.session.clear()

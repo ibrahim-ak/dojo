@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>user_book</title>
+     {%load static%}
+     <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+     <header>
+
+          <h1> welcome {{request.session.username}}</h1>
+          <a href="/logout">log out</a>
+     </header>
+     <div class="bookbody">
+          <div>
+               <form action="addbook" method="post">
+                    {% csrf_token %}
+                    <h1>add favorite book</h1>
+                    <label for="title">title</label>
+                    <input type="text" name="title" >
+                    <label for="descrption">descrption</label>
+                    <input type="text" name="descrption">
+                    <button>add book</button>
+               </form>
+          </div>
+          <div>
+               <h1>all books</h1>
+               {%for book in books%}
+                    
+                    <p> <a href="success/{{book.id}}">{{book.title}}</a></p>
+                    <li>added by {{book.uplodaed_book.first_name}}</li>
+
+                    <a href=""></a>
+               {%endfor%}
+          </div>
+     </div>
+</body>
+</html>
