@@ -27,8 +27,8 @@ public class AlfredQuotes {
           return conversation;
      }
      // NINJA BONUS
-     public String helloBatata(){
-          return "hello Batata";
+     public String helloBatata(String batata){
+          return batata.toUpperCase();
      }
      // See the specs to overload the guestGreeting method
      // SENSEI BONUS

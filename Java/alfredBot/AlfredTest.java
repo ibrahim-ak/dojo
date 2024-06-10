@@ -13,7 +13,7 @@ public class AlfredTest {
         String testGuestGreeting = alfredBot.guestGreeting("Beth Kane");
         String testGuestGreeting1 = alfredBot.guestGreeting("ibrahim", "khalil");
         String testDateAnnouncement = alfredBot.dateAnnouncement();
-        String helloBatata = alfredBot.helloBatata();
+        String helloBatata = alfredBot.helloBatata("batata");
         
         String alexisTest = alfredBot.respondBeforeAlexis(
                 "Alexis! Play some low-fi beats.");
