@@ -5,7 +5,9 @@ public class AlfredQuotes {
           // You do not need to code here, this is an example method
           return "Hello, lovely to see you. How are you?";
      }
-
+     public void guestGreeting (){
+          System.out.println("hello world");
+     }
      public String guestGreeting(String name) {
           // YOUR CODE HERE
           return "hello ! how are you " + name;
