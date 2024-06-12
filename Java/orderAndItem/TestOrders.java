@@ -70,6 +70,6 @@ public class TestOrders {
           
           System.out.println(order1.getStatusMessage());
           // System.out.println(order1.getOrderTotal());
-          order1.display();
+          order3.display();
      }
 }
