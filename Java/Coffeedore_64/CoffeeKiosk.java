@@ -43,11 +43,29 @@ public class CoffeeKiosk {
           String itemNumber = System.console().readLine();
           New_order.addItem(this.menu.get(Integer.parseInt(itemNumber)));
           // Write a while loop to collect all user's order items
-          while (!itemNumber.equals("q")) {
-               System.out.println("Please enter a menu item index or q to quit:");
-               itemNumber = System.console().readLine();
-               New_order.addItem(this.menu.get(Integer.parseInt(itemNumber)));
+          try {
+               while (!itemNumber.equals("q")) {
+                    System.out.println("Please enter a menu item index or q to quit:");
+                    itemNumber = System.console().readLine();
+                    if (itemNumber.equals("q")){
+                         New_order.display();
+                         break;
+                    }
+                    
+                    New_order.addItem(this.menu.get(Integer.parseInt(itemNumber)));
 
+               }
+          } catch (Exception e) {
+               System.out.println("this item is not in the menu");
+               while (!itemNumber.equals("q")) {
+                    System.out.println("Please enter a menu item index or q to quit:");
+                    itemNumber = System.console().readLine();
+                    if (itemNumber.equals("q")){
+                         break;
+                    }
+                    New_order.addItem(this.menu.get(Integer.parseInt(itemNumber)));
+               }
+               
                // Get the item object from the menu, and add the item to the order
                // Ask them to enter a new item index or q again, and take their input
           }
