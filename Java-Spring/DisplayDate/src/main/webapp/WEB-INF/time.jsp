@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
+D
 </head>
 <body>
 <h1> <c:out value="${time }"></c:out> </h1>
