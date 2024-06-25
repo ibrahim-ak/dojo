@@ -1,0 +1,23 @@
+.bigbox{
+	display: flex;
+	justify-content: space-around;
+}
+.box {
+	border: 2px solid gray;
+	text-align: center;
+	width: 250px;
+	height: 170px;
+}
+
+.activities{
+	border: 2px solid gray;
+	width: 95%;
+	height: 200px;
+ 	overflow: auto;
+}
+.green{
+	color: green;
+}
+.red{
+	color: red;
+}
