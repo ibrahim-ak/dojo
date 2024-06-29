@@ -20,6 +20,8 @@ import com.example.BooksAPI.models.Book;
 	    // this method deletes a book that starts with a specific title
 	    Long deleteByTitleStartingWith(String search);
 	    Book  findById(long id );
+//	    Book getBookByTitle(String title);
+	    List <Book>findByTitle(String title);
 	}
 
 

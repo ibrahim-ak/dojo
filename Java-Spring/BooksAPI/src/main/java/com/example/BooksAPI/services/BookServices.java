@@ -24,12 +24,22 @@ public class BookServices {
  public Book createBook(Book b) {
      return bookRepository.save(b);
  }
+ 
+ public List<Book> getBookByTitle(String title) {
+	List<Book> books = bookRepository.findByTitle(title);
+	return books;
+}
+ 
  // retrieves a book
  public Book findBook(Long id) {
+//	 System.out.println("GHelasdknasdnn");
+
      Optional<Book> optionalBook = bookRepository.findById(id);
      if(optionalBook.isPresent()) {
+//    	 System.out.println("Exist");
          return optionalBook.get();
      } else {
+//    	 System.out.println("Not Exist");
          return null;
      }
  }
@@ -50,6 +60,8 @@ public class BookServices {
 	 
  
  }
+ 
+
  public void destroy (long id) {
 	 
 		 bookRepository.deleteById(id);

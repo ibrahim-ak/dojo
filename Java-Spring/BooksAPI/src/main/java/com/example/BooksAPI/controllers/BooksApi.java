@@ -28,6 +28,12 @@ public class BooksApi {
 
 		return book;
 	}
+	
+	@RequestMapping("value/getbook_by_title/{title}")
+	public List<Book> getbyTitle(@PathVariable("title") String title )
+	{	
+		return bookService.getBookByTitle(title);
+	}
 
 	@RequestMapping(value = "/api/books/{id}", method = RequestMethod.DELETE)
 	public void destroy(@PathVariable("id") Long id) {
