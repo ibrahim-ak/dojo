@@ -12,5 +12,5 @@ public interface BurgerReposetory extends CrudRepository<Burger, Long>{
 	
 	@Override
 	List<Burger> findAll();
-	
+	Burger findByid(Long id);
 }

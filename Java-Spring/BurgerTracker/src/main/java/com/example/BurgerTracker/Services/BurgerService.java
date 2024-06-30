@@ -23,4 +23,13 @@ private final BurgerReposetory burgerRepository;
     	
     	
     }
+public Burger findBurger(Long id) {
+	return burgerRepository.findByid(id);
+	
 }
+public Burger updateBurger(Burger burger) {
+
+return burgerRepository.save(burger);
+}
+}
+

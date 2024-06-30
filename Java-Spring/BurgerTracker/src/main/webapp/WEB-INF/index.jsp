@@ -7,22 +7,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Dashboard</title>
 </head>
 <body>
 	<h1>Burger Tracker</h1>
 	<div>
-		<table>
-			<tr>
-				<th>Burger Name</th>
-				<th>Restaurant Name</th>
-				<th>Rating</th>
+		<table style="border : 1px solid gray">
+			<tr >
+				<th style="border : 1px solid gray">Burger Name</th>
+				<th style="border : 1px solid gray">Restaurant Name</th>
+				<th style="border : 1px solid gray">Rating</th>
+				<th style="border : 1px solid gray">Action</th>
 			</tr>
 			<c:forEach items="${burgerss}" var="burger">
-				<tr>
-					<td><c:out value="${burger.burgerName }"></c:out></td>
-					<td><c:out value="${burger.restaurentName }"></c:out></td>
-					<td><c:out value="${burger.rate }"></c:out></td>
+				<tr style="border : 1px solid gray">
+					<td style="border : 1px solid gray"><c:out value="${burger.burgerName }"></c:out></td>
+					<td style="border : 1px solid gray"><c:out value="${burger.restaurentName }"></c:out></td>
+					<td style="border : 1px solid gray"><c:out value="${burger.rate }"></c:out></td>
+					<td style="border : 1px solid gray"><a href="burgers/edit/${burger.id }">edit</a></td>
 				</tr>
 			</c:forEach>
 		</table>
