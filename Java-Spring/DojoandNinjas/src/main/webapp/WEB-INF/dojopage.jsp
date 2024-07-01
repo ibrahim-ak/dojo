@@ -19,13 +19,13 @@
 			<tr>
 				<th>Dojo <c:out value="${dojoid.name}"></c:out></th>
 			</tr>
-			<tr>
 				<c:forEach var="ninja" items="${dojoid.ninjas}">
+			<tr>
 					<td> <c:out value="${ninja.firstName }"></c:out> </td>
 					<td> <c:out value="${ninja.lastName }"></c:out> </td>
 					<td> <c:out value="${ninja.age }"></c:out> </td>
-					</c:forEach>
 			</tr>
+					</c:forEach>
 		
 		
 	</table>
