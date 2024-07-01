@@ -15,6 +15,7 @@ public interface TravelRepository extends CrudRepository<Travels, Long>{
 	
 	
 
+	
 	@Override
 	Travels findById(Long id);
 }
