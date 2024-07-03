@@ -19,7 +19,7 @@
 
 	<form:form action="/ninjas/new" method="post" modelAttribute="ninja">
 	<form:select path="dojo">
-        <c:forEach var="dojoo" items="${dojoid}">
+        <c:forEach var="dojoo" items="${dojos}">
             <!--- Each option VALUE is the id of the person --->
             <form:option value="${dojoo.id}" path="dojo">
             <!--- This is what shows to the user as the option --->

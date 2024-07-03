@@ -44,14 +44,15 @@ public class HomeController {
 	@GetMapping("/ninjas/new")
 	public String ninjaIndex(@ModelAttribute("ninja") Ninjas ninja , Model model) {
 		List<Dojos> dojo = dojoservice.findAllDojos();
-		model.addAttribute("dojoid",dojo);
+		model.addAttribute("dojos",dojo);
 		return "Ninjas/NinjaCreation.jsp";
 
 	}
 
 	@PostMapping("/ninjas/new")
-	public String creatNinja(@Valid @ModelAttribute("ninja") Ninjas ninja, BindingResult result) {
+	public String creatNinja(@Valid @ModelAttribute("ninja") Ninjas ninja, BindingResult result,Model model) {
 		if (result.hasErrors()) {
+			model.addAttribute("dojos",dojoservice.findAllDojos());
 			return "Ninjas/NinjaCreation.jsp";
 		} else {
 			ninjaservices.creatNinja(ninja);

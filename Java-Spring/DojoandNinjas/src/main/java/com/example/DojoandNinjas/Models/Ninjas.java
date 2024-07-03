@@ -16,6 +16,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "ninjas")
@@ -24,6 +25,7 @@ public class Ninjas {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long id ;
 @NotNull
+@Size(min=1)
 private String firstName;
 @NotNull
 private String lastName;
