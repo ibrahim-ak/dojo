@@ -34,14 +34,21 @@ const createCompany = () => {
 const express = require("express");
 const app = express();
 const port = 8000;
-
+var allusers = [];
+var companies=[];
 app.get("/api/user/new", (req, res) => {
-  res.send(
-    createUser()
-  );
+ const newUser = createUser() 
+ allusers.push(newUser);
+  res.json(newUser)
 });
 
+app.get("/api/users",(req,res) => {
+  res.json(allusers)
+})
+
 app.get("/api/company/new", (req, res) => {
+  const newcompany=createCompany();
+  companies.push(newcompany)
   res.send(
     createCompany()
   );
@@ -54,6 +61,15 @@ app.get("/api/company/user", (req, res) => {
   }
   );
 });
+
+app.get("/api/companies", (req, res) => {
+  res.send({
+    companies
+
+  }
+  );
+});
+
 
 
 app.listen(port, () => console.log(`Listening on port: ${port}`));

@@ -19,6 +19,7 @@ const Form = (props) => {
                setNewdata(response.data);
 
           }).catch(err => {
+               setNewdata("");
                console.error(err);
                
           });
