@@ -5,4 +5,4 @@ module.exports = app => {
      app.patch('/api/joke/:id', JokeController.updateExistingJoke);
      app.post('/api/joke', JokeController.createNewJoke);
      app.delete('/api/joke/:id', JokeController.deleteAnExistingJoke);
- }
+}
