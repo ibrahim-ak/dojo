@@ -9,7 +9,7 @@ const ListDetails = () => {
   const navigate = useNavigate();
   const getBack=(event)=>{
     event.preventDefault();;
-    navigate(-1);
+    navigate('/products');
   }
 console.log(id);
 
@@ -34,9 +34,9 @@ console.log(id);
       <h1>prduct price : {d.price}</h1>
       <h1>prduct description : {d.description}</h1>
 
-      <form onClick={getBack}>
-        <button>Back</button>
-      </form>
+        <button onClick={()=>navigate(`/products/${d._id}/edit`) } >edit</button>
+        <button onClick={getBack}>Back</button>
+      
     </div>
   )
 }

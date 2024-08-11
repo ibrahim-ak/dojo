@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import axios from 'axios'
+import Edit from './components/Edit'
 function App() {
   const [listofproducts, setListOfProducts] = useState([])
 
@@ -30,14 +31,17 @@ function App() {
 
   }, [])
 
-
+  const removeFromDom = productId => {
+    setListOfProducts(listofproducts.filter(product => product._id != productId));
+}
 
   return (
     <>
 
       <Routes>
-        <Route path="/products" element={<><Form addtolist={theFinallist} /> <List theList={listofproducts} /></>} />
-        <Route path="/products/:id" element={<ListDetails />} />
+        <Route path="/products" element={<><Form addtolist={theFinallist} /> <List theList={listofproducts} removeFromDom={removeFromDom} /></>} />
+        <Route path="/products/:id" element={<ListDetails  />} />
+        <Route path='/products/:id/edit' element={<Edit   />}/>
       </Routes >
     </>
   )
