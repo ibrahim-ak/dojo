@@ -1,13 +1,19 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 
 
 
-const Form = () => {
+const Form = (props) => {
 
      const [title, setTitle] = useState("")
      const [price, setPrice] = useState(0)
      const [description, setDescription] = useState("")
+
+
+
+
+
+
 
      const handelSubmit = (e) => {
           e.preventDefault();
@@ -15,12 +21,18 @@ const Form = () => {
                title,
                price,
                description
-          }).then(res => console.log(res))
+
+          }).then((res) => {
+               
+               console.log(res.data.product)
+               props.addtolist(res.data.product)
+          })
                .catch(err => console.log(err));
 
-               setTitle("")
-               setPrice(0)
-               setDescription("")
+          setTitle("")
+          setPrice(0)
+          setDescription("")
+
      }
 
 
